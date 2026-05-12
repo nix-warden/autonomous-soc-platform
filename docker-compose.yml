@@ -1,0 +1,11 @@
+name: autonomous-soc-platform
+
+# Include logical blocks of our architecture
+include:
+  - siem/docker-compose.base.yml
+
+# Create a unified network for container communication (can be converted to overlay for Swarm later)
+networks:
+  soc_overlay:
+    name: soc_overlay
+    driver: bridge
